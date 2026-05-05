@@ -21,6 +21,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Login Berhasil'),
+        backgroundColor: Colors.green,
+        behavior: SnackBarBehavior.floating,
+        elevation: 6,
+      ),
+    );
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => const Dashboard()),
@@ -36,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
         foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 2, 60, 108),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        'SMA Negeri 1 Contoh',
+                        'SMK Negeri 1 Bekasi',
                         style: TextStyle(fontSize: 13, color: Colors.grey[600]),
                       ),
                     ],

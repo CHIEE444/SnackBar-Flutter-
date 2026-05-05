@@ -23,6 +23,14 @@ class _DashboardState extends State<Dashboard> {
             icon: Icon(Icons.logout, color: Colors.white),
             tooltip: 'Logout',
             onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Logout Berhasil'),
+                  backgroundColor: Colors.green,
+                  behavior: SnackBarBehavior.floating,
+                  elevation: 6,
+                ),
+              );
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginPage()),
@@ -75,7 +83,7 @@ class _DashboardState extends State<Dashboard> {
                               ),
                             ),
                             Text(
-                              'Kelas: XII IPA 1',
+                              'Kelas: XI RPL B',
                               style: TextStyle(
                                 fontSize: 13,
                                 color: Colors.grey[600],
@@ -394,7 +402,6 @@ class _DashboardState extends State<Dashboard> {
               ),
             ],
           ),
-          
         ),
       ),
     );
